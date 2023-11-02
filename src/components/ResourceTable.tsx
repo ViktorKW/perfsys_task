@@ -1,11 +1,11 @@
 import { TResource } from "../types"
 import Resource from "./Resource"
 
-interface ResourceTableProps{
+interface IResourceTableProps{
     resource_arr:TResource[]
 }
 
-export default function ResourceTable(props:ResourceTableProps){
+export default function ResourceTable(props:IResourceTableProps){
 	const { resource_arr } = props
 
 	return (
