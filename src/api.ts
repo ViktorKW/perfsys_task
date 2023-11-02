@@ -1,14 +1,15 @@
 import axios from "axios"
-import { TResource } from "./types"
+import { TComment, TResource } from "./types"
 
-const JOBS_URL = "https://api.hnpwa.com/v0/jobs/1.json"
-const SHOWS_URL = "https://api.hnpwa.com/v0/show/1.json"
-const NEWS_URL = "https://api.hnpwa.com/v0/news/1.json"
+const BASIC_URL = "https://api.hnpwa.com/v0"
+const JOBS_URL = `${BASIC_URL}/jobs/1.json`
+const SHOWS_URL = `${BASIC_URL}/show/1.json`
+const NEWS_URL = `${BASIC_URL}/news/1.json`
 
 export async function getJobs():Promise<TResource[]>{
 	try{
 		const response = await axios.get(JOBS_URL)
-		console.log(response.data as TResource[])
+		console.log(response)
 		return response.data as TResource[]
 	} catch(e){
 		console.error("Error at getJobs api", e)
@@ -33,5 +34,18 @@ export async function getNews():Promise<TResource[]>{
 	} catch(e){
 		console.error("Error at getJobs api", e)
 		return [] as TResource[]
+	}
+}
+
+export async function getComment(id:string|number):Promise<TComment>{
+	const COMMENTS_URL = `${BASIC_URL}/item/${id}.json`
+
+	try{
+		const response = await axios.get(COMMENTS_URL)  
+		console.log(response)
+		return response.data as TComment
+	} catch(e){
+		console.error("Error at getJobs api", e)
+		return {} as TComment
 	}
 }
