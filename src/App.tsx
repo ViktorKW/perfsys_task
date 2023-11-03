@@ -1,11 +1,11 @@
+import "./scss/index.scss"
 import { Route, Routes } from "react-router-dom"
-import HomePage from "./pages/HomePage"
+import HomePage from "./pages/HomePage/HomePage"
 import NotFoundPage from "./pages/NotFoundPage"
-import NewsPage from "./pages/NewsPage"
-import ShowsPage from "./pages/ShowsPage"
-import JobsPage from "./pages/JobsPage"
-import NavBar from "./components/NavBar"
+import NavBar from "./components/NavBar/NavBar"
 import CommentsPage from "./pages/CommentsPage"
+import ResourcePage from "./pages/ResourcePage"
+import { getJobs, getNews, getShows } from "./api"
 
 export default function App() {
 	const empty_space = <canvas className='empty-space' height={"20px"}></canvas>
@@ -17,9 +17,9 @@ export default function App() {
 			<Routes>
 				<Route index element={<HomePage />} />
         
-				<Route path='news' element={<NewsPage />}></Route>
-				<Route path='shows' element={<ShowsPage />} />
-				<Route path='jobs' element={<JobsPage />} />
+				<Route path='news' element={<ResourcePage resourceName="News" getResources={getNews}/>} />
+				<Route path='shows' element={<ResourcePage resourceName="Shows" getResources={getShows}/>}/>
+				<Route path='jobs' element={<ResourcePage resourceName="Jobs" getResources={getJobs}/>} />
 
 				<Route path="news/comments/:id" element={<CommentsPage/>} />
 				<Route path="shows/comments/:id" element={<CommentsPage/>} />
