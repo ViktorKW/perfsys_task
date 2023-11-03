@@ -1,0 +1,8 @@
+@import './text.scss';
+@import './globals.scss';
+
+@media (max-width: 550px) {
+    .hide-on-mobile {
+      display: none;
+    }
+}

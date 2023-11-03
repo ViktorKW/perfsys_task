@@ -1,0 +1,25 @@
+@import '../../scss/colors.scss';
+
+.comment-card {
+    background-color: #f0f0f0;
+    border: 1px solid #c6c3c3;
+    border-radius: 8px;
+    margin: 10px;
+    padding: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: fit-content;
+
+    .comment-card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+        .comment-time {
+            color: $support-color;
+        }
+    }
+    
+    .comment-card-content {
+        margin-top: 8px;
+    } 
+}

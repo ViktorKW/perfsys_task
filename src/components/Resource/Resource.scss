@@ -1,0 +1,12 @@
+.item {
+    cursor: pointer;
+    
+    &:hover{
+        background-color: rgba(52, 152, 219, 0.7);
+    }
+
+    td {
+        padding: 10px 20px;
+    }
+}
+  

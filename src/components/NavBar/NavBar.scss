@@ -1,0 +1,28 @@
+@import '../../scss/colors.scss';
+
+.navbar {
+    background-color: $background-color;
+    color: $btn-text-color;
+    padding: 10px;
+}
+  
+.nav-links {
+    display: flex;
+    justify-content: space-around;
+  
+    a {
+        width: 100%;
+        text-decoration: none;
+        color: $btn-text-color;
+
+        padding: 10px;
+        transition: 0.2s;
+
+        &:hover {
+            color: $btn-hover-text-color;
+            background-color: $on-hover-background-color;
+            border-radius: 5px;
+        }
+    }
+}
+  

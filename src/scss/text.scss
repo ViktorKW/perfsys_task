@@ -1,0 +1,26 @@
+@import './colors.scss';
+
+.text-small{
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.text-content{
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.text-medium{
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.text-large{
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.text-support{
+    @extend .text-small;
+    color:$support-color;
+}
