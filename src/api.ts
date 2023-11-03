@@ -9,7 +9,6 @@ const NEWS_URL = `${BASIC_URL}/news/1.json`
 export async function getJobs():Promise<TResource[]>{
 	try{
 		const response = await axios.get(JOBS_URL)
-		console.log(response)
 		return response.data as TResource[]
 	} catch(e){
 		console.error("Error at getJobs api", e)
@@ -42,7 +41,6 @@ export async function getComment(id:string|number):Promise<TComment>{
 
 	try{
 		const response = await axios.get(COMMENTS_URL)  
-		console.log(response)
 		return response.data as TComment
 	} catch(e){
 		console.error("Error at getJobs api", e)
