@@ -20,7 +20,7 @@ export default function Resource(props:IResourceProps){
 	const {id, title, time, domain} = resource
 
 	const handleOnClick = ()=>{
-		navigate(`comments/${id}`)
+		navigate(`/perfsys_task/comments/${id}`)
 	}
 
 	const handleLinkOnClick = (e:MouseEvent<HTMLTableCellElement>)=>{

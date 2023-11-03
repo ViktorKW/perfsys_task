@@ -5,13 +5,13 @@ export default function Home() {
 	return (
 		<div className="menu">
 			<div className="menu-option-container">
-				<Link className="menu-option text-medium" to="/jobs">
+				<Link className="menu-option text-medium" to="/perfsys_task/jobs">
 					Jobs
 				</Link>
-				<Link className="menu-option text-medium" to="/news">
+				<Link className="menu-option text-medium" to="/perfsys_task/news">
 					News
 				</Link>
-				<Link className="menu-option text-medium" to="/shows">
+				<Link className="menu-option text-medium" to="/perfsys_task/shows">
 					Shows
 				</Link>
 			</div>

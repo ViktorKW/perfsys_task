@@ -17,13 +17,13 @@ export default function App() {
 			<Routes>
 				<Route index element={<HomePage />} />
         
-				<Route path='news' element={<ResourcePage resourceName="News" getResources={getNews}/>} />
-				<Route path='shows' element={<ResourcePage resourceName="Shows" getResources={getShows}/>}/>
-				<Route path='jobs' element={<ResourcePage resourceName="Jobs" getResources={getJobs}/>} />
+				<Route path='/perfsys_task/news' element={<ResourcePage resourceName="News" getResources={getNews}/>} />
+				<Route path='/perfsys_task/shows' element={<ResourcePage resourceName="Shows" getResources={getShows}/>}/>
+				<Route path='/perfsys_task/jobs' element={<ResourcePage resourceName="Jobs" getResources={getJobs}/>} />
 
-				<Route path="news/comments/:id" element={<CommentsPage/>} />
-				<Route path="shows/comments/:id" element={<CommentsPage/>} />
-				<Route path="jobs/comments/:id" element={<CommentsPage/>} />
+				<Route path="/perfsys_task/news/comments/:id" element={<CommentsPage/>} />
+				<Route path="/perfsys_task/shows/comments/:id" element={<CommentsPage/>} />
+				<Route path="/perfsys_task/jobs/comments/:id" element={<CommentsPage/>} />
 
 				<Route path='*' element={<NotFoundPage />} />
 			</Routes>
