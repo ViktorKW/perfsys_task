@@ -8,8 +8,8 @@ export default function Jobs(){
 
 	useEffect(()=>{
 		async function initJobs(){
-			const new_jobs:TResource[] = await getJobs()
-			setJobs(new_jobs)
+			const newJobs:TResource[] = await getJobs()
+			setJobs(newJobs)
 		}
 
 		initJobs()
@@ -18,7 +18,7 @@ export default function Jobs(){
 	return (
 		<>
 			<h1>Jobs</h1>
-			<ResourceTable resource_arr={jobs}/>
+			<ResourceTable resourcesArray={jobs}/>
 		</>
 	)
 }

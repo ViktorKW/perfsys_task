@@ -14,17 +14,17 @@ export default function CommentsPage(){
 
     useEffect(()=>{
     	async function initCommentsPage(){
-    		const new_comment:TComment = await getComment(id as string)
-    		setComment(new_comment)
+    		const newComment:TComment = await getComment(id as string)
+    		setComment(newComment)
     	}
 
     	initCommentsPage()
     }, [id])
 
     return (
-    	<>
+    	<div>
     		<h1>Comments</h1>
     		<Comment comment={comment}/>
-    	</>
+    	</div>
     )
 }
