@@ -8,13 +8,18 @@ interface IResourceProps{
 export default function Resource(props:IResourceProps){
 	const { resource } = props
 
+	function formatDate(dateNumber: number) {
+		const options: Intl.DateTimeFormatOptions = { weekday: "short", month: "short", day: "numeric" }
+		const date = new Date(dateNumber * 1000)
+		return date.toLocaleDateString("en-US", options)
+	}
+
+	const {id, title, time, domain} = resource
 	return (
-		<Link to={`comments/${resource.id}`}>
-			<tr key={resource.id}>
-				<td>{resource.title}</td>
-				<td>{resource.time}</td>
-				<td>{resource.domain}</td>
-			</tr>
-		</Link>
+		<tr key={id}>
+			<td><Link to={`comments/${id}`}>{title}</Link></td>
+			<td>{formatDate(time)}</td>
+			<td>{domain}</td>
+		</tr>
 	)
 }
