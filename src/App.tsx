@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom"
 import HomePage from "./pages/HomePage/HomePage"
 import NotFoundPage from "./pages/NotFoundPage"
 import NavBar from "./components/NavBar/NavBar"
-import CommentsPage from "./pages/CommentsPage"
+import CommentsPage from "./pages/CommentsPage/CommentsPage"
 import ResourcePage from "./pages/ResourcePage"
 import { getJobs, getNews, getShows } from "./api"
 

@@ -1,6 +1,7 @@
+import "./ResourceTable.scss"
 import { useState } from "react"
-import { TResource } from "../types"
-import Resource from "./Resource"
+import { TResource } from "../../types"
+import Resource from "../Resource/Resource"
 
 interface IResourceTableProps{
     resourcesArray:TResource[]
@@ -41,30 +42,25 @@ export default function ResourceTable(props:IResourceTableProps){
 	}
 
 	return (
-		<table>
-			<caption>Our items</caption>
-			<thead>
-				<tr>
-					<th>            
-						<button type="button" onClick={() => requestSort("title")}>
-							Title
-						</button>
-					</th>
-					<th>
-						<button type="button" onClick={() => requestSort("time")}>
-							Time
-						</button>
-					</th>
-					<th>
-						<button type="button" onClick={() => requestSort("domain")}>
-							Domain
-						</button>
-					</th>
-				</tr>
-			</thead>
-			<tbody>
-				{sortedResources.map(resource => <Resource key={resource.id} resource={resource}/>)}
-			</tbody>
-		</table>
+		<div style={{overflowX:"auto"}}>
+			<table>
+				<thead className="table-header">
+					<tr className="text-medium">
+						<th onClick={() => requestSort("title")}>           
+						Title
+						</th>
+						<th className="hide-on-mobile" onClick={() => requestSort("time")}>
+						Time
+						</th>
+						<th onClick={() => requestSort("domain")}>
+						Domain
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					{sortedResources.map(resource => <Resource key={resource.id} resource={resource}/>)}
+				</tbody>
+			</table>
+		</div>
 	)
 }

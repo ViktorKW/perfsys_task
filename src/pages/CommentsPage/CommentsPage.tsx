@@ -1,11 +1,13 @@
+import "./CommentsPage.scss"
 import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
-import { TComment } from "../types"
-import { getComment } from "../api"
-import Comment from "../components/Comment"
+import { useParams, useNavigate } from "react-router-dom"
+import { TComment } from "../../types"
+import { getComment } from "../../api"
+import Comment from "../../components/Comment/Comment"
 
 export default function CommentsPage(){
 	const [comment, setComment] = useState<TComment>({} as TComment)
+	const navigate = useNavigate()
 
     type CommentsParams = {
         id: string;
@@ -21,9 +23,14 @@ export default function CommentsPage(){
     	initCommentsPage()
     }, [id])
 
+    const handleGoBack = ()=>{
+    	navigate(-1)
+    }
+
     return (
-    	<div>
-    		<h1>Comments</h1>
+    	<div className="comments-page">
+    		<p className="go-back text-support" onClick={handleGoBack}>{String.fromCharCode(8592)}Go Back</p>
+    		<p className="comment-header text-large"><b>Comments</b></p>
     		<Comment comment={comment}/>
     	</div>
     )
