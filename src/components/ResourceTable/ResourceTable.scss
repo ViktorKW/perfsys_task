@@ -38,8 +38,6 @@
         }
     }
 
-    
-
     th.title, td.title{
         width: 50%;
         overflow: hidden;
@@ -52,7 +50,7 @@
         text-overflow: ellipsis;
     }
 
-    th.time, th.time{
+    th.time, td.time{
         width: 25%;
         overflow: hidden;
         text-overflow: ellipsis;
