@@ -6,6 +6,7 @@ import { getComment } from "../../api"
 import Comment from "../../components/Comment/Comment"
 
 export default function CommentsPage(){
+	const [isLoaded, setIsLoaded] = useState<boolean>(false)
 	const [comment, setComment] = useState<TComment>({} as TComment)
 	const navigate = useNavigate()
 
@@ -18,6 +19,7 @@ export default function CommentsPage(){
     	async function initCommentsPage(){
     		const newComment:TComment = await getComment(id as string)
     		setComment(newComment)
+    		setIsLoaded(true)
     	}
 
     	initCommentsPage()
@@ -29,9 +31,10 @@ export default function CommentsPage(){
 
     return (
     	<div className="comments-page">
-    		<p className="go-back text-support" onClick={handleGoBack}>{String.fromCharCode(8592)}Go Back</p>
+    		<p className="go-back text-small support-color" onClick={handleGoBack}>{String.fromCharCode(8592)}Go Back</p>
     		<p className="comment-header text-large"><b>Comments</b></p>
-    		<Comment comment={comment}/>
+
+    		{ isLoaded ? <Comment comment={comment}/> : <p className="loading text-medium support-color">Loading...</p> }
     	</div>
     )
 }
