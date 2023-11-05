@@ -1,44 +1,60 @@
 @import '../../scss/colors.scss';
 
-.table-container{
-    display: block;
-    overflow-x: auto;
+.resource-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
 
-    .resource-table {
-        width: 100%;
-        border-collapse: collapse;
-        margin: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    table-layout: fixed;
+
+    tbody {
+        background-color: #f7f7f7;
+    }
     
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    
-        tbody {
-            background-color: #f7f7f7;
+    tr {
+        &:nth-child(even) {
+            background-color: #e3e3e3;
         }
-        
-        tr {
-            &:nth-child(even) {
-                background-color: #e3e3e3;
+    }
+
+    td {
+        padding: 10px 20px;
+    }
+
+    .table-header{
+        background-color: $secondary-background-color;
+        color: #fff;
+    
+        th {
+            padding: 12px 20px;
+            text-align: left;
+            cursor: pointer;
+    
+            transition: 0.3s;
+            &:hover{
+                opacity: 0.5;
             }
         }
-          
-        td {
-            padding: 10px 20px;
-        }
+    }
+
     
-        .table-header{
-            background-color: $secondary-background-color;
-            color: #fff;
-        
-            th {
-                padding: 12px 20px;
-                text-align: left;
-                cursor: pointer;
-        
-                transition: 0.3s;
-                &:hover{
-                    opacity: 0.5;
-                }
-            }
-        }
+
+    th.title, td.title{
+        width: 50%;
+        overflow: hidden;
+        text-overflow: ellipsis; 
+    }
+
+    th.domain, td.domain{
+        width: 30%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    th.time, th.time{
+        width: 25%;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 }

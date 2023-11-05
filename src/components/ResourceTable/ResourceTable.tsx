@@ -42,25 +42,24 @@ export default function ResourceTable(props:IResourceTableProps){
 	}
 
 	return (
-		<div className="table-container">
-			<table className="resource-table">
-				<thead className="table-header">
-					<tr className="text-medium">
-						<th onClick={() => requestSort("title")}>           
-					Title
-						</th>
-						<th onClick={() => requestSort("time")}>
-					Time
-						</th>
-						<th onClick={() => requestSort("domain")}>
-					Domain
-						</th>
-					</tr>
-				</thead>
-				<tbody>
-					{sortedResources.map(resource => <Resource key={resource.id} resource={resource}/>)}
-				</tbody>
-			</table>
-		</div>
+
+		<table className="resource-table">
+			<thead className="table-header">
+				<tr className="text-medium">
+					<th className="title" onClick={() => requestSort("title")}>           
+							Title
+					</th>
+					<th className="time" onClick={() => requestSort("time")}>
+							Time
+					</th>
+					<th className="domain" onClick={() => requestSort("domain")}>
+							Domain
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				{sortedResources.map(resource => <Resource key={resource.id} resource={resource}/>)}
+			</tbody>
+		</table>
 	)
 }

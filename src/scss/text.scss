@@ -13,11 +13,11 @@ $font-weight-bold: 500;
     @include text-style($font-size, $font-weight, $color);
 
     @media (max-width: 550px) {
-        @include text-style($font-size / 1.5, $font-weight, $color);
+        @include text-style(calc($font-size / 1.5), $font-weight, $color);
     }
 
     @media (max-width: 230px) {
-        @include text-style($font-size / 2, $font-weight, $color);
+        @include text-style(calc($font-size / 2), $font-weight, $color);
     }
 }
 

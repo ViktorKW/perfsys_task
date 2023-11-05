@@ -29,9 +29,9 @@ export default function Resource(props:IResourceProps){
 
 	return (
 		<tr className="item text-content" key={id} onClick={handleOnClick}>
-			<td>{title}</td>
-			<td>{formatDate(time)}</td>
-			<td onClick={handleLinkOnClick}><a href={`https://${domain}`} target="_blank" rel="noopener noreferrer">{domain}</a></td>
+			<td className="title">{title}</td>
+			<td className="time">{formatDate(time)}</td>
+			<td className="domain" onClick={handleLinkOnClick}><a href={`https://${domain}`} target="_blank" rel="noopener noreferrer">{domain}</a></td>
 		</tr>
 	)
 }
