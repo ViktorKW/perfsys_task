@@ -41,19 +41,24 @@ export default function ResourceTable(props:IResourceTableProps){
 		setSortConfig({ key, direction })
 	}
 
-	return (
+	const triangleUpDown = (thKey:"title" | "time" | "domain")=>{
+		return key === thKey 
+			?  direction ==="ascending" ? <span className="triangle">▲</span> : <span className="triangle">▼</span>
+			: <></>
+	}
 
+	return (
 		<table className="resource-table">
 			<thead className="table-header">
 				<tr className="text-medium">
 					<th className="title" onClick={() => requestSort("title")}>           
-							Title
+						<span>Title</span>Title{triangleUpDown("title")}
 					</th>
 					<th className="time" onClick={() => requestSort("time")}>
-							Time
+						<span>Time</span>{triangleUpDown("time")}
 					</th>
 					<th className="domain" onClick={() => requestSort("domain")}>
-							Domain
+						<span>Domain</span>{triangleUpDown("domain")}
 					</th>
 				</tr>
 			</thead>
