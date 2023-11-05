@@ -1,26 +1,43 @@
 @import './colors.scss';
 
-.text-small{
-    font-size: 16px;
-    font-weight: 400;
+$font-weight-normal: 400;
+$font-weight-bold: 500;
+
+@mixin text-style($font-size, $font-weight, $color: inherit) {
+    font-size: $font-size;
+    font-weight: $font-weight;
+    color: $color;
 }
 
-.text-content{
-    font-size: 20px;
-    font-weight: 400;
+@mixin responsive-text-style($font-size, $font-weight, $color: inherit) {
+    @include text-style($font-size, $font-weight, $color);
+
+    @media (max-width: 550px) {
+        @include text-style($font-size / 1.5, $font-weight, $color);
+    }
+
+    @media (max-width: 230px) {
+        @include text-style($font-size / 2, $font-weight, $color);
+    }
 }
 
-.text-medium{
-    font-size: 24px;
-    font-weight: 500;
-}
+$font-sizes: (
+    small: 1em,
+    content: 1.3em,
+    medium: 1.5em,
+    large: 1.7em,
+);
 
-.text-large{
-    font-size: 32px;
-    font-weight: 500;
-}
+$styles: (
+    small: $font-weight-normal,
+    content: $font-weight-normal,
+    medium: $font-weight-bold,
+    large: $font-weight-bold,
+);
 
-.text-support{
-    @extend .text-small;
-    color:$support-color;
+@each $size, $font-size in $font-sizes {
+    $font-weight: map-get($styles, $size);
+        .text-#{$size} {
+            @include responsive-text-style($font-size, $font-weight);
+        }
 }

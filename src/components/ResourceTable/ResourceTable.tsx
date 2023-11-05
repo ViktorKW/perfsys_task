@@ -42,18 +42,18 @@ export default function ResourceTable(props:IResourceTableProps){
 	}
 
 	return (
-		<div style={{overflowX:"auto"}}>
-			<table>
+		<div className="table-container">
+			<table className="resource-table">
 				<thead className="table-header">
 					<tr className="text-medium">
 						<th onClick={() => requestSort("title")}>           
-						Title
+					Title
 						</th>
-						<th className="hide-on-mobile" onClick={() => requestSort("time")}>
-						Time
+						<th onClick={() => requestSort("time")}>
+					Time
 						</th>
 						<th onClick={() => requestSort("domain")}>
-						Domain
+					Domain
 						</th>
 					</tr>
 				</thead>

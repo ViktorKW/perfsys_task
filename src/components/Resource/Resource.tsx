@@ -30,7 +30,7 @@ export default function Resource(props:IResourceProps){
 	return (
 		<tr className="item text-content" key={id} onClick={handleOnClick}>
 			<td>{title}</td>
-			<td className="hide-on-mobile">{formatDate(time)}</td>
+			<td>{formatDate(time)}</td>
 			<td onClick={handleLinkOnClick}><a href={`https://${domain}`} target="_blank" rel="noopener noreferrer">{domain}</a></td>
 		</tr>
 	)
