@@ -38,21 +38,24 @@
         }
     }
 
-    th.title, td.title{
-        width: 50%;
+    th.title, td.title, th.domain, td.domain , th.time, td.time{
         overflow: hidden;
         text-overflow: ellipsis; 
     }
 
-    th.domain, td.domain{
-        width: 30%;
-        overflow: hidden;
-        text-overflow: ellipsis;
+    th.title, td.title{
+        width: 50%;
+
+        @media (max-width: 550px) {
+            width: 40%;
+        }
     }
 
-    th.time, td.time{
+    th.domain, td.domain, th.time, td.time{
         width: 25%;
-        overflow: hidden;
-        text-overflow: ellipsis;
+
+        @media (max-width: 550px) {
+            width: 30%;
+        }
     }
 }
