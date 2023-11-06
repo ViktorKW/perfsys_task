@@ -1,27 +1,8 @@
 .item {
     cursor: pointer;
-    
-    &:hover{
-        background-color: rgba(52, 152, 219, 0.7);
-    }
 
     td {
             padding: 10px 20px;
-    }
-
-    .td-title{
-        min-width: 75%;
-        max-width: 75%;
-    }
-
-    .td-domain{
-        min-width: 15%;
-        max-width: 15%;
-    }
-
-    .td-time{
-        min-width: 10%;
-        max-width: 10%;
     }
 }
 

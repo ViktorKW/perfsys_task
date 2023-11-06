@@ -16,6 +16,10 @@
         &:nth-child(even) {
             background-color: #e3e3e3;
         }
+        
+        &:hover:not(.table-header tr){
+            background-color: rgba(52, 152, 219, 0.7);
+        }
     }
 
     td {
