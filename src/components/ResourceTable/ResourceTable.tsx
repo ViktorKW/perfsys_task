@@ -52,7 +52,7 @@ export default function ResourceTable(props:IResourceTableProps){
 			<thead className="table-header">
 				<tr className="text-medium">
 					<th className="title" onClick={() => requestSort("title")}>           
-						<span>Title</span>Title{triangleUpDown("title")}
+						<span>Title</span>{triangleUpDown("title")}
 					</th>
 					<th className="time" onClick={() => requestSort("time")}>
 						<span>Time</span>{triangleUpDown("time")}
