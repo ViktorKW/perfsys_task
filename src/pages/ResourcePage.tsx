@@ -13,12 +13,6 @@ export default function ResourcePage(props:IResourcePageProps){
 	const [isLoaded, setIsLoaded] = useState<boolean>(false)
 	const [error, setError] = useState<string|null>(null)
 
-	function delay(ms:number) {
-		return new Promise((resolve) => {
-			setTimeout(resolve, ms)
-		})
-	}
-
 	useEffect(()=>{
 		async function initJobs(){
 			setIsLoaded(false)
@@ -29,7 +23,6 @@ export default function ResourcePage(props:IResourcePageProps){
 				setError("No items has been retrieved")
 			}
 			
-			await delay(200)
 			setResources(newResources)
 			setIsLoaded(true)
 		}
