@@ -31,19 +31,19 @@ export async function getNews():Promise<TResource[]>{
 		const response = await axios.get(NEWS_URL)
 		return response.data as TResource[]
 	} catch(e){
-		console.error("Error at getJobs api", e)
+		console.error("Error at getNews api", e)
 		return [] as TResource[]
 	}
 }
 
-export async function getComment(id:string|number):Promise<TComment>{
+export async function getComment(id:string|number):Promise<TComment | null>{
 	const COMMENTS_URL = `${BASIC_URL}/item/${id}.json`
 
 	try{
-		const response = await axios.get(COMMENTS_URL)  
-		return response.data as TComment
+		const response = await axios.get(COMMENTS_URL) 
+		return response.data ? response.data as TComment : null
 	} catch(e){
-		console.error("Error at getJobs api", e)
-		return {} as TComment
+		console.error("Error at getComment api", e)
+		return null
 	}
 }
