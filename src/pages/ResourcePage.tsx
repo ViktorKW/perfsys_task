@@ -15,7 +15,6 @@ export default function ResourcePage(props:IResourcePageProps){
 
 	useEffect(()=>{
 		async function initJobs(){
-			setIsLoaded(false)
 			setError(null)
 
 			const newResources:TResource[] = await getResources()
