@@ -18,7 +18,6 @@ export default function CommentsPage(){
     useEffect(()=>{
     	async function initCommentsPage(){
     		const newComment:TComment|null = await getComment(id as string)
-    		console.log("newComment", newComment)
     		setComment(newComment)
     		setIsLoaded(true)
     	}
