@@ -1,4 +1,3 @@
-import "./ResourcePage.scss"
 import { useEffect, useState } from "react"
 import { TResource } from "../types"
 import ResourceTable from "../components/ResourceTable/ResourceTable"
